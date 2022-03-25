@@ -3,7 +3,7 @@ package lecture3.interfaces.cloneable;
 public class Dataset implements Cloneable {
     private String[] rows;
     private double averageLength;
-    private String[] mostFrequentRows;
+    private String[] mostFrequentTokens;
 
     public Dataset(String[] rows) {
         this.rows = rows;
@@ -14,7 +14,7 @@ public class Dataset implements Cloneable {
     private Dataset(String[] rows, double averageLength, String[] mostFrequentRows) {
         this.rows = rows;
         this.averageLength = averageLength;
-        this.mostFrequentRows = mostFrequentRows;
+        this.mostFrequentTokens = mostFrequentRows;
     }
 
     private void calculateAverageLength() {
@@ -41,6 +41,6 @@ public class Dataset implements Cloneable {
     @Override
     public Dataset clone() {
         // create new Object and fill all needed data
-        return new Dataset(rows, averageLength, mostFrequentRows);
+        return new Dataset(rows, averageLength, mostFrequentTokens);
     }
 }
